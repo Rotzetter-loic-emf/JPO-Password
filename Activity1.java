@@ -12,7 +12,14 @@ public class Activity1 {
          * Pour tester si un mot de passe est correct, il faut appeler la méthode testPassword en lui donnant en paramètre le password à tester
          * Testez votre application en affichant un SOUT pour chaque password essayé et retestez sans ce SOUT. Voyez vous une différence ?
          */
+        for (int i = 0; i < PASSWORDS.length; i++) {
+            boolean test = testPassword(PASSWORDS[i]);
+            if (test) {
+                System.out.println(PASSWORDS[i]);                
+            }
 
+            
+        }
 
 
 
@@ -22,7 +29,7 @@ public class Activity1 {
         boolean retour = false;
         byte[] decodedBytes = Base64.getDecoder().decode(PASSWORD);
         String decodedPwd = new String(decodedBytes);
-
+        
         if (passwordToTest.equals(decodedPwd)) {
             retour = true;
         }
